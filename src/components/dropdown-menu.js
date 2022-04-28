@@ -5,18 +5,21 @@
  */
 
 import { LitElement, html, css } from "lit";
+import { property, customElement } from "lit/decorators.js";
 
 /**
  * A dropdown menu component
  *   Displays a dropdown list of options
  *   On user selection, dispatches a custom event with the selected value
  * Inputs:
- * - eventid: string, the event id to dispatch when the menu is clicked
- * - label: string, the label to display in the menu
- * - options: object, e.g { t: 'Triangle', s: 'Square', p: 'Pentagon', c: 'Circle' }
+ * - eventid: String, the event id to dispatch when the menu is clicked
+ * - label: String, the label to display in the menu
+ * - options: Object, e.g { t: 'Triangle', s: 'Square', p: 'Pentagon', c: 'Circle' }
+ * - selected: String, the selected option
  * Outputs:
  * - eventid, selected-option
  */
+@customElement("dropdown-menu")
 export class DropdownMenu extends LitElement {
   static styles = css`
     :host {
@@ -38,27 +41,16 @@ export class DropdownMenu extends LitElement {
     }
   `;
 
-  static properties = {
-    eventid: { type: String },
-    label: { type: String },
-    options: { type: Object },
-    selected: { type: String },
+  @property({ type: String }) eventid = "dropdown-menu-event";
+  @property({ type: String }) label = "Choose a branch:";
+  @property({ type: Object }) options = {
+    a: "Art",
+    b: "Biology",
+    c: "Chemistry",
+    d: "Drama",
+    e: "English",
   };
-
-  constructor() {
-    super();
-    this.eventid = "dropdown-menu-event";
-    this.label = "Choose a branch:";
-    this.options = {
-      a: "Art",
-      b: "Biology",
-      c: "Chemistry",
-      d: "Drama",
-      e: "English",
-    };
-
-    this.selected = undefined;
-  }
+  @property({ type: String }) selected = undefined;
 
   firstUpdated() {
     this.setSelected("id-select", this.selected);
@@ -98,7 +90,6 @@ export class DropdownMenu extends LitElement {
   }
 }
 
-customElements.define("dropdown-menu", DropdownMenu);
 /**
  * Returns a custom event ready for dispatch.
  * @param {*} eventid
