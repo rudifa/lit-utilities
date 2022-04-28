@@ -6,25 +6,6 @@
 
 import { LitElement, html, css } from "lit";
 
-// 1 support for event dispatching
-
-/**
- * Returns a custom event ready for dispatch.
- * @param {*} eventid
- * @param {*} value
- * @returns {Event}
- */
-const customEvent = (eventid, value) => {
-  const event = new CustomEvent(eventid, {
-    detail: value,
-    bubbles: true,
-    composed: true,
-  });
-  return event;
-};
-
-// 2 the compenent class
-
 /**
  * A dropdown menu component
  *   Displays a dropdown list of options
@@ -43,9 +24,11 @@ export class DropdownMenu extends LitElement {
     }
 
     div.wrap {
-      color: var(--primary-color);
-      border: 3px solid var(--primary-color);
       border-radius: 1rem;
+      border: 3px solid var(--primary-color);
+      color: var(--primary-color);
+      font-family: Helvetica, sans-serif;
+      font-size: 1.5rem;
       padding: 1rem 1.5rem;
     }
 
@@ -116,3 +99,17 @@ export class DropdownMenu extends LitElement {
 }
 
 customElements.define("dropdown-menu", DropdownMenu);
+/**
+ * Returns a custom event ready for dispatch.
+ * @param {*} eventid
+ * @param {*} value
+ * @returns {Event}
+ */
+const customEvent = (eventid, value) => {
+  const event = new CustomEvent(eventid, {
+    detail: value,
+    bubbles: true,
+    composed: true,
+  });
+  return event;
+};
