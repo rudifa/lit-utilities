@@ -1,0 +1,19 @@
+{
+  "name": "lit-d3-components",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-decorators": "^7.17.9",
+    "vite": "^2.9.5",
+    "vite-plugin-babel": "^1.0.0"
+  }
+}
