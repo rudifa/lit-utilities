@@ -1,3 +1,9 @@
+/** @prettier */
+/**
+ * Copyright © 2022 Rudolf Farkas
+ * License MIT
+ */
+
 import { LitElement, html, css } from "lit";
 import { property, state, customElement } from "lit/decorators.js";
 
