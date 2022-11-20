@@ -5,3 +5,5 @@
 > ✨ lit components packed with vite
 
 `<dropdown-menu><dropdown-menu>`
+
+TODO input* styles; describe

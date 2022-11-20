@@ -4,5 +4,5 @@
  * License MIT
  */
 
-import "./components/app-root";
-import "./components/info-links";
+import './components/app-root';
+import './components/info-links';
