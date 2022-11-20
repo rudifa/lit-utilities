@@ -5,12 +5,12 @@
  */
 
 import {LitElement, html, css} from 'lit';
-import {property, customElement} from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
 
-import {InfoLinks} from './info-links';
-import {DropdownMenu} from './dropdown-menu';
-import {InputHello} from './input-hello';
-import {InputDemo} from './input-demo';
+import './info-links';
+import './dropdown-menu';
+import './input-hello';
+import './input-demo';
 
 /**
  * Demo app for lit-utilities elements

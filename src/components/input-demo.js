@@ -3,8 +3,8 @@
 import {LitElement, html} from 'lit';
 import {property, customElement} from 'lit/decorators.js';
 
-import {InputHello} from './input-hello';
-import {InputBox} from './input-box';
+import './input-hello';
+import './input-box';
 
 @customElement('input-demo')
 export class InputDemo extends LitElement {
