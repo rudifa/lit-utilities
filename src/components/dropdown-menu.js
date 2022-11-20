@@ -4,8 +4,8 @@
  * License MIT
  */
 
-import { LitElement, html, css } from "lit";
-import { property, customElement } from "lit/decorators.js";
+import {LitElement, html, css} from 'lit';
+import {property, customElement} from 'lit/decorators.js';
 
 /**
  * A dropdown menu component
@@ -19,7 +19,7 @@ import { property, customElement } from "lit/decorators.js";
  * Outputs:
  * - eventid, selected-option
  */
-@customElement("dropdown-menu")
+@customElement('dropdown-menu')
 export class DropdownMenu extends LitElement {
   static styles = css`
     :host {
@@ -41,19 +41,19 @@ export class DropdownMenu extends LitElement {
     }
   `;
 
-  @property({ type: String }) eventid = "dropdown-menu-event";
-  @property({ type: String }) label = "Choose a branch:";
-  @property({ type: Object }) options = {
-    a: "Art",
-    b: "Biology",
-    c: "Chemistry",
-    d: "Drama",
-    e: "English",
+  @property({type: String}) eventid = 'dropdown-menu-event';
+  @property({type: String}) label = 'Choose a branch:';
+  @property({type: Object}) options = {
+    a: 'Art',
+    b: 'Biology',
+    c: 'Chemistry',
+    d: 'Drama',
+    e: 'English',
   };
-  @property({ type: String }) selected = undefined;
+  @property({type: String}) selected = undefined;
 
   firstUpdated() {
-    this.setSelected("id-select", this.selected);
+    this.setSelected('id-select', this.selected);
   }
 
   optionsView(options) {
@@ -66,7 +66,7 @@ export class DropdownMenu extends LitElement {
   }
 
   setSelected(id, value) {
-    console.log("setSelected id:", id, "value:", value);
+    console.log('setSelected id:', id, 'value:', value);
     let element = this.shadowRoot.getElementById(id);
     element.value = value;
   }
@@ -74,7 +74,7 @@ export class DropdownMenu extends LitElement {
   updateSelected(e) {
     this.selected = e.target.value;
     const event = customEvent(this.eventid, this.selected);
-    console.log("updateSelected selected:", this.selected, "newEvent:", event);
+    console.log('updateSelected selected:', this.selected, 'newEvent:', event);
     this.dispatchEvent(event);
   }
 

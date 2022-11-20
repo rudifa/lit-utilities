@@ -4,10 +4,10 @@
  * License MIT
  */
 
-import { LitElement, html, css } from "lit";
-import { property, state, customElement } from "lit/decorators.js";
+import {LitElement, html, css} from 'lit';
+import {property, state, customElement} from 'lit/decorators.js';
 
-@customElement("info-links")
+@customElement('info-links')
 export class InfoLinks extends LitElement {
   static get styles() {
     return css`
@@ -47,9 +47,8 @@ export class InfoLinks extends LitElement {
   render() {
     return html`
       <div class="wrapper">
-        ${this.aHref("https://lit.dev/", "Lit")}
-        ${this.aHref("https://vitejs.dev/guide/", "Vite")}
-        ${this.aHref("https://www.snowpack.dev/", "Snowpack")}
+        ${this.aHref('https://lit.dev/', 'Lit')}
+        ${this.aHref('https://vitejs.dev/guide/', 'Vite')}
       </div>
     `;
   }

@@ -1,5 +1,5 @@
-import { defineConfig } from "vite";
-import babel from "vite-plugin-babel";
+import {defineConfig} from 'vite';
+import babel from 'vite-plugin-babel';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,11 +9,8 @@ export default defineConfig({
         babelrc: false,
         configFile: false,
         plugins: [
-          [
-            "@babel/plugin-proposal-decorators",
-            { decoratorsBeforeExport: true },
-          ],
-          ["@babel/plugin-proposal-class-properties", { loose: true }],
+          ['@babel/plugin-proposal-decorators', {decoratorsBeforeExport: true}],
+          ['@babel/plugin-proposal-class-properties', {loose: true}],
         ],
       },
     }),
@@ -28,6 +25,6 @@ export default defineConfig({
     // }
   },
   server: {
-    open: "/index.html",
+    open: '/index.html',
   },
 });
